@@ -74,6 +74,11 @@ cat /tmp/configs/sysctl.conf.add >> /etc/sysctl.conf
 cat /tmp/configs/limits.conf.add >> /etc/security/limits.conf
 }
 
+setup_helpers(){
+echo "==> Setting up helper scripts"
+cat /tmp/helpers/make_greenplum_ready.pl >> /root/make_greenplum_ready.pl
+}
+
 setup_ipaddress() {
 echo "==> IP Address Setup"
 rm -rf /etc/udev/rules.d/70-persistent-net.rules
@@ -96,6 +101,8 @@ _main() {
 	get_versions
 	setup_hostname
 	setup_ipaddress
+	setup_configs
+	setup_helpers
 	install_binaries
 }
 

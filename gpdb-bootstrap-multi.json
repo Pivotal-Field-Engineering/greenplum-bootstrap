@@ -6,7 +6,7 @@
 	"headless": "false",
 	"vm_basename":"PivotalGPDB-Bootstrap",
 	"gpversion":"4.3.9.1",
-        "gpbuildstamp":"20160923a"
+        "gpbuildstamp":"20160927a"
 
 },
 "builders": [
@@ -14,7 +14,7 @@
 	"name": "aws",
 	"type": "amazon-ebs",
 	"region": "us-east-1",
-	"source_ami": "ami-c74105d0",
+	"source_ami": "ami-29084f3e",
 	"instance_type": "m4.xlarge",
 	"ssh_username": "gpadmin",
 	"ssh_pty": "true",
@@ -93,6 +93,10 @@
 	"inline":["mkdir -p /tmp/bins"]
 },
 {
+	"type":"shell",
+	"inline":["mkdir -p /tmp/helpers"]
+},
+{
 	"type": "file",
 	"source": "/Users/scottkahler/Software/GREENPLUM/",
 	"destination": "/tmp/bins/"
@@ -105,6 +109,11 @@
 {
 	"type": "file",
 	"source": "configs",
+	"destination": "/tmp"
+},
+{
+	"type": "file",
+	"source": "helpers",
 	"destination": "/tmp"
 },
 {
