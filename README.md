@@ -1,8 +1,5 @@
-
-	 
-	
 # Greenplum Database Bootstrap Builder
-####Packer-Based AWS Greenplum Environment Build Tool for the Greenplum Database
+#### Packer-Based AWS Greenplum Environment Build Tool for the Greenplum Database
 
 **Requirements:**  
 
@@ -20,20 +17,19 @@ This will generate the OVA which can then be imported into VirtualBox, and/or a 
 and/or a AWS AMI
 
 #### AMIs from the last run
-* us-east-1: ami-c51255d2
-* us-west-1: ami-d3aee0b3
-* us-west-2: ami-dc518ebc
+* us-east-1: ami-6cd5fd7b
+* us-west-1: ami-3d8edb5d
+* us-west-2: ami-e6ec4186
 
 #### Base AMI Notes and changes
 
 * 20160927 - ami-29084f3e
-** yum update
-** added :git, epel, dkms
-** kernel-2.6.32-642.4.2
-** ixgbevf 3.2.2 for enhanced networking in AWS
-** AWS CLI Bundle installed
-** Set sriovNetSupport to simple
-** added make_greenplum_ready.pl utility script to /root which will raid and format additional devices as one xfs volume
-
+  * yum update
+  * added :git, epel, dkms
+  * kernel-2.6.32-642.4.2
+  * ixgbevf 3.2.2 for enhanced networking in AWS
+  * AWS CLI Bundle installed
+  * Set sriovNetSupport to simple
+  * added make_greenplum_ready.pl utility script to /root which will raid and format additional devices as one xfs volume
 * 20160923 - ami-c74105d0 
-**Changed AMI Image to be 40G
+  * Changed AMI Image to be 40G
